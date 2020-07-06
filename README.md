@@ -13,7 +13,9 @@ I have a pop up with a button - you click the button and it sets a cookie called
 
 My own website runs on a cloud server, behind apache 2, which redirects to the docker container running the code.  Apache handles all the SSL stuff and the host name handling - the code knows nothing about this.  Will this fix the problem?  Is it a domain issue?  I don't know.
 
-**What I've learnt is this.  HTTPS good, HTTP bad.  Now, the session cookie is always being set, regardless of whether we use http or https, so can we fix it that way?  Or I just make sure the docker container on the website exposes the https port and uses that and not http. **
+**What I've learnt is this.  HTTPS good, HTTP bad.  Now, the session cookie is always being set, regardless of whether we use http or https, so can we fix it that way?  Or I just make sure the docker container on the website exposes the https port and uses that and not http.**
+
+**In fact, I've added another clause in launchSettings.json called SimpleDBCookieExampleNoSSL, which starts up on the local machine but not in https.  Now you will see the cookie won't be set, however much you press the Accept button.**
 
 ## What now?
 
